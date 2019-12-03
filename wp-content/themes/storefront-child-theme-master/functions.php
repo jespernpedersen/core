@@ -23,4 +23,11 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
+function storefront_homepage_remove() {
+    remove_action( 'homepage', 'storefront_product_categories', 20 );
+    remove_action( 'homepage', 'storefront_product_categories', 20 );
+    remove_action( 'homepage', 'storefront_product_categories', 20 );
+    remove_action( 'homepage', 'storefront_product_categories', 20 );
+}
 
+add_action( 'wp_head', 'storefront_homepage_remove', 80 );

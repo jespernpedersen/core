@@ -45,7 +45,6 @@
 		 */
 		do_action( 'storefront_header' );
 		?>
-
 	</header><!-- #masthead -->
 
 	<?php
