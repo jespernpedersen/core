@@ -1,0 +1,173 @@
+/* 
+-----------------------------------------------
+    COLORS
+-----------------------------------------------
+*/
+
+:root {
+    --primary-color: #008058;
+    --secondary-color: #080808;
+    --gray-background: #b9b9b9;
+}
+
+
+/* 
+-----------------------------------------------
+    RESET BROWSER STYLE
+-----------------------------------------------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: proxima-nova, sans-serif;
+}
+
+
+/* 
+-----------------------------------------------
+    GRID / LAYOUT
+-----------------------------------------------
+*/
+
+
+/* 
+-----------------------------------------------
+    REPEATABLE ELEMENTS
+-----------------------------------------------
+*/
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* 
+-----------------------------------------------
+    HEADER
+-----------------------------------------------
+*/
+
+
+/* Reset */
+
+.page-template-template-homepage:not(.has-post-thumbnail) #page .site-main,
+.page-template-template-homepage #page .type-page {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+
+/* New Style */
+
+#page .site-header {
+    position: fixed;
+    left: 0;
+    background-color: transparent;
+    width: 10vw;
+    top: 0;
+    padding-top: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: content-box;
+    height: 100vh;
+}
+
+.woocommerce-active .site-header .site-search {
+    display: none;
+}
+
+.woocommerce-active #page .site-header .site-header-cart {
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: translate(0, -50%);
+    max-width: 10vw;
+}
+
+#page .site-header .col-full {
+    padding: 0;
+}
+
+#page .site-header .col-full .site-branding {
+    text-align: center;
+}
+
+#page .site-header .col-full img {
+    max-width: 100px;
+    margin: auto;
+}
+
+.woocommerce-active #page .site-header .site-branding {
+    margin: 0;
+    margin-bottom: 165px;
+    width: 100%;
+}
+
+
+/* Menu */
+
+.woocommerce-active #page .site-header .main-navigation {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    max-width: 10vw;
+}
+
+#page .main-navigation ul.menu,
+#page .main-navigation ul.nav-menu {
+    margin-left: 0;
+}
+
+#page .main-navigation ul li,
+#page .secondary-navigation ul li {
+    width: 100%;
+}
+
+#page .main-navigation ul li:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+#page .main-navigation ul.menu>li>a,
+#page .main-navigation ul.nav-menu>li>a {
+    padding: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#page .main-navigation ul li.current_page_item a {
+    color: #f4564a;
+}
+
+
+/* 
+-----------------------------------------------
+    FOOTER
+-----------------------------------------------
+*/
+
+#page .site-footer {
+    background-color: rgb(66, 119, 63);
+    color: #FFF;
+}
+
+#page .site-footer a:not(.button) {
+    display: none;
+}
+
+
+/* Instagram Feed */
+
+.instagram-feed {
+    position: relative;
+    height: 505px;
+    overflow: hidden;
+}

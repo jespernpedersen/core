@@ -23,11 +23,19 @@ function sf_child_theme_dequeue_style() {
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 
+function jnp_scripts() {
+	wp_enqueue_style( 'jnp-custom-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'jnp-responsive', get_stylesheet_directory_uri() . '/assets/css/responsive.css' );
+}
+add_action( 'wp_enqueue_scripts', 'jnp_scripts' );
+
 function storefront_homepage_remove() {
     remove_action( 'homepage', 'storefront_product_categories', 20 );
-    remove_action( 'homepage', 'storefront_product_categories', 20 );
-    remove_action( 'homepage', 'storefront_product_categories', 20 );
-    remove_action( 'homepage', 'storefront_product_categories', 20 );
+    remove_action( 'homepage', 'storefront_recent_products', 30 );
+    remove_action( 'homepage', 'storefront_featured_products', 40 );
+    remove_action( 'homepage', 'storefront_popular_products', 50 );
+    remove_action( 'homepage', 'storefront_on_sale_products', 60 );
+    remove_action( 'homepage', 'storefront_best_selling_products', 70 );
 }
 
 add_action( 'wp_head', 'storefront_homepage_remove', 80 );
