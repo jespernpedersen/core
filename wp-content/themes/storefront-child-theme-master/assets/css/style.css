@@ -168,6 +168,62 @@ a {
 
 .instagram-feed {
     position: relative;
-    height: 505px;
+    height: 376px;
+    overflow: hidden;
+}
+
+
+/* 
+-----------------------------------------------
+    SUBPAGE
+-----------------------------------------------
+*/
+
+.page-template-default .col-full {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
+.page-template-default #content .content-area {
+    width: 100%;
+    margin: 0;
+}
+
+.page-template-default header {
+    height: 100vh;
+    background-color: #ebebeb;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.page-template-default header h1 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.page-template-default .storefront-breadcrumb {
+    display: none;
+}
+
+.page-template-default .elementor-widget-heading .elementor-widget-container {
+    text-align: center;
+    display: inline-block;
+    background-color: #f4564a;
+}
+
+.page-template-default .elementor-widget-heading.elementor-widget-heading h4.elementor-heading-title {
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    font-size: 30px;
+}
+
+.elementor-section {
     overflow: hidden;
 }

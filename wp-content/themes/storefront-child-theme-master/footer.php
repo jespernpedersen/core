@@ -10,9 +10,12 @@
 ?>
 
 		</div><!-- .col-full -->
-        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<?php if(is_front_page()) { ?>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <div class="instagram-feed">
 <div class="elfsight-app-e2cb8aa1-a21b-478a-8040-d6df6449668b"></div>
+<?php } ?>
+
 </a>
 	</div><!-- #content -->
 
