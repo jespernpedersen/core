@@ -39,3 +39,10 @@ function storefront_homepage_remove() {
 }
 
 add_action( 'wp_head', 'storefront_homepage_remove', 80 );
+
+
+add_action('wp_head', 'show_template');
+function show_template() {
+	global $template;
+	print_r($template);
+}
