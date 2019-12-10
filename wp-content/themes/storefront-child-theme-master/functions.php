@@ -46,3 +46,12 @@ function show_template() {
 	global $template;
 	print_r($template);
 }
+
+// define the woocommerce_after_add_to_cart_quantity callback 
+function action_woocommerce_after_add_to_cart_quantity(  ) { 
+    // make action magic happen here... 
+}; 
+         
+// add the action 
+add_action( 'woocommerce_after_add_to_cart_quantity', 'action_woocommerce_after_add_to_cart_quantity', 10, 0 ); 
+

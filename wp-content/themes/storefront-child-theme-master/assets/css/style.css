@@ -227,3 +227,18 @@ a {
 .elementor-section {
     overflow: hidden;
 }
+
+
+/* 
+-----------------------------------------------
+    SHOP
+-----------------------------------------------
+*/
+
+h2.woocommerce-loop-product__title {
+    background-color: var(--primary-color);
+    padding: 10px 15px;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+}
