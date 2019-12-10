@@ -43,12 +43,51 @@ a {
     text-decoration: none;
 }
 
+.container {
+    max-width: 1045px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+html .elementor-section.elementor-section-boxed>.elementor-container {
+    max-width: 1045px;
+}
+
 
 /* 
 -----------------------------------------------
     HEADER
 -----------------------------------------------
 */
+
+a.cart-contents::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    line-height: inherit;
+    vertical-align: baseline;
+    content: "\f291";
+    height: 1em;
+    line-height: 1.618;
+    width: 100%;
+    text-align: center;
+}
+
+.site-header-cart .cart-contents {
+    text-align: center;
+}
+
+html .site-header-cart .cart-contents::after {
+    display: none;
+}
 
 
 /* Reset */
@@ -70,10 +109,15 @@ a {
     width: 10vw;
     top: 0;
     padding-top: 45px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0;
+    padding-right: 0;
     box-sizing: content-box;
     height: 100vh;
+}
+
+.main-navigation ul li,
+.secondary-navigation ul li {
+    outline: none;
 }
 
 .woocommerce-active .site-header .site-search {
@@ -141,6 +185,7 @@ a {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+    outline: none;
 }
 
 #page .main-navigation ul li.current_page_item a {
@@ -154,13 +199,39 @@ a {
 -----------------------------------------------
 */
 
-#page .site-footer {
+html .site-footer {
+    background-color: transparent;
+    padding: 0;
+}
+
+html .site-header-cart .cart-contents .count {
+    opacity: 1;
+}
+
+.site-header-cart .cart-contents .amount {
+    width: 100%;
+    display: block;
+    line-height: 15px;
+    margin-top: 3px;
+}
+
+html .site-header-cart .cart-contents {
+    outline: none;
+}
+
+#page .site-footer .container {
     background-color: rgb(66, 119, 63);
     color: #FFF;
+    padding: 15px;
+    max-width: 1045px;
 }
 
 #page .site-footer a:not(.button) {
     display: none;
+}
+
+.site-info {
+    padding: 0;
 }
 
 
@@ -168,8 +239,12 @@ a {
 
 .instagram-feed {
     position: relative;
-    height: 376px;
+    height: 200px;
     overflow: hidden;
+}
+
+.instagram-feed .container {
+    padding: 0;
 }
 
 
