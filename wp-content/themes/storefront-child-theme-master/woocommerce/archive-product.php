@@ -17,7 +17,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header( 'shop' );
+get_header();
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -45,7 +45,6 @@ get_header( 'shop' );
 	?>
 </header>
 
-TEST
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -67,7 +66,7 @@ if ( woocommerce_product_loop() ) {
 			/**
 			 * Hook: woocommerce_shop_loop.
 			 */
-			do_action( 'woocommerce_shop_loop' );
+			// do_action( 'woocommerce_shop_loop' );
 
 			wc_get_template_part( 'content', 'product' );
 		}
@@ -104,4 +103,4 @@ do_action( 'woocommerce_after_main_content' );
  */
 // do_action( 'woocommerce_sidebar' );
 
-get_footer( 'shop' );
+get_footer();

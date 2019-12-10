@@ -207,7 +207,7 @@ a {
     text-transform: uppercase;
 }
 
-.page-template-default .storefront-breadcrumb {
+html .storefront-breadcrumb {
     display: none;
 }
 

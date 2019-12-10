@@ -55,3 +55,5 @@ function action_woocommerce_after_add_to_cart_quantity(  ) {
 // add the action 
 add_action( 'woocommerce_after_add_to_cart_quantity', 'action_woocommerce_after_add_to_cart_quantity', 10, 0 ); 
 
+// Remove WooCommerce Functions
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
