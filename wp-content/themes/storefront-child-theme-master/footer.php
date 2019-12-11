@@ -11,13 +11,11 @@
 
 		</div><!-- .col-full -->
 <?php if(is_front_page()) { ?>
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="instagram-feed">
-	<div class="container">
-		<div class="elfsight-app-e2cb8aa1-a21b-478a-8040-d6df6449668b">
-		</div>
+	<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+	<div class="instagram-feed">
+			<div class="elfsight-app-e2cb8aa1-a21b-478a-8040-d6df6449668b">
+			</div>
 	</div>
-</div>
 <?php } ?>
 
 </a>
@@ -36,10 +34,6 @@
 			 * @hooked storefront_credit         - 20
 			 */
 			// do_action( 'storefront_footer' );
-<<<<<<< HEAD
-=======
-			
->>>>>>> 98a99b80cbfdd3b0ea89b7f5850246fd6f6744cb
 			?>
 				Footer
 			</div>

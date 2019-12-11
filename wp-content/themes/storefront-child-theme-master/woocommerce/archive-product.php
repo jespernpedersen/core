@@ -30,6 +30,62 @@ get_header();
 
 ?>
 <header class="woocommerce-products-header">
+<div class="custom-product-menu">
+	<ul>
+		<li <?php if(is_post_type_archive()) { echo "class='active'"; } ?>><a href="/shop/">All</a></li>
+	<?php
+		$taxonomy     = 'product_cat';
+		$orderby      = 'name';  
+		$show_count   = 0;      // 1 for yes, 0 for no
+		$pad_counts   = 0;      // 1 for yes, 0 for no
+		$hierarchical = 1;      // 1 for yes, 0 for no  
+		$title        = '';  
+		$empty        = 0;
+		$cate = get_queried_object();
+		$cateID = $cate->term_id;
+
+		$args = array(
+			'taxonomy'     => $taxonomy,
+			'orderby'      => $orderby,
+			'show_count'   => $show_count,
+			'pad_counts'   => $pad_counts,
+			'hierarchical' => $hierarchical,
+			'title_li'     => $title,
+			'hide_empty'   => $empty
+		);
+		$all_categories = get_categories( $args );
+		foreach ($all_categories as $cat) {
+		if($cat->category_parent == 0) {
+			$category_id = $cat->term_id; 
+			if($category_id == $cateID) {
+				echo "<li class='active'>";
+			}     
+			else {
+				echo "<li>";
+			} 
+			echo '<a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a></li>';
+
+			$args2 = array(
+					'taxonomy'     => $taxonomy,
+					'child_of'     => 0,
+					'parent'       => $category_id,
+					'orderby'      => $orderby,
+					'show_count'   => $show_count,
+					'pad_counts'   => $pad_counts,
+					'hierarchical' => $hierarchical,
+					'title_li'     => $title,
+					'hide_empty'   => $empty
+			);
+			$sub_cats = get_categories( $args2 );
+			if($sub_cats) {
+				foreach($sub_cats as $sub_category) {
+					echo  $sub_category->name ;
+				}   
+			}
+		}       
+		}
+		?>		
+	</div>
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
@@ -55,7 +111,7 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	// do_action( 'woocommerce_before_shop_loop' );
 
 	woocommerce_product_loop_start();
 
@@ -94,7 +150,7 @@ if ( woocommerce_product_loop() ) {
  *
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
-do_action( 'woocommerce_after_main_content' );
+// do_action( 'woocommerce_after_main_content' );
 
 /**
  * Hook: woocommerce_sidebar.

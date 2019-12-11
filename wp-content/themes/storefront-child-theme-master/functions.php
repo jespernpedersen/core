@@ -40,20 +40,28 @@ function storefront_homepage_remove() {
 
 add_action( 'wp_head', 'storefront_homepage_remove', 80 );
 
-
+// Debug
 add_action('wp_head', 'show_template');
 function show_template() {
 	global $template;
-	print_r($template);
+    print_r($template);
 }
 
-// define the woocommerce_after_add_to_cart_quantity callback 
-function action_woocommerce_after_add_to_cart_quantity(  ) { 
-    // make action magic happen here... 
-}; 
-         
-// add the action 
-add_action( 'woocommerce_after_add_to_cart_quantity', 'action_woocommerce_after_add_to_cart_quantity', 10, 0 ); 
+// Add Product Excerpt to Archive
+add_action( 'woocommerce_after_shop_loop_item_title', 'output_product_excerpt', 9 ); 
+function output_product_excerpt() { 
+   the_excerpt();
+}
 
-// Remove WooCommerce Functions
-remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+
+/**
+ * Change number of products that are displayed per page (shop page)
+ */
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
+
+function new_loop_shop_per_page( $cols ) {
+  // $cols contains the current number of products per page based on the value stored on Options -> Reading
+  // Return the number of products you wanna show per page.
+  $cols = 4;
+  return $cols;
+}
