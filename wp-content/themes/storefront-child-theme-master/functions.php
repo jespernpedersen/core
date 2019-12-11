@@ -54,6 +54,11 @@ function output_product_excerpt() {
 }
 
 
+
+
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+
+
 /**
  * Change number of products that are displayed per page (shop page)
  */
@@ -64,4 +69,14 @@ function new_loop_shop_per_page( $cols ) {
   // Return the number of products you wanna show per page.
   $cols = 4;
   return $cols;
+}
+
+
+add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+
+function add_my_currency_symbol( $currency_symbol, $currency ) {
+     switch( $currency ) {
+          case 'DKK': $currency_symbol = 'kr.'; break;
+     }
+     return $currency_symbol;
 }

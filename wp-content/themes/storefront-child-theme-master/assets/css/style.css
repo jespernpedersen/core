@@ -105,7 +105,6 @@ html input[type='reset'],
 html input[type='submit'],
 html .button,
 html .wc-block-grid__products .wc-block-grid__product .wp-block-button__link,
-html .added_to_cart,
 html button.alt,
 html input[type="button"].alt,
 html input[type="reset"].alt,
@@ -117,7 +116,9 @@ html input[type="button"].alt:hover,
 html input[type="reset"].alt:hover,
 html input[type="submit"].alt:hover,
 html .button.alt:hover,
-html .widget-area .widget a.button.alt:hover {
+html .widget-area .widget a.button.alt:hover,
+html .elementor-31 .elementor-element.elementor-element-d544bb0 a.elementor-button,
+html .elementor-31 .elementor-element.elementor-element-d544bb0 .elementor-button {
     text-transform: uppercase;
     font-size: 34px;
     color: white;
@@ -128,6 +129,18 @@ html .widget-area .widget a.button.alt:hover {
     line-height: 44px;
     padding-top: 3px;
     margin: 0;
+}
+
+html .added_to_cart {
+    text-transform: uppercase;
+    font-size: 34px;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: var(--primary-color);
+    padding: 0px 20px;
+    font-weight: normal;
+    vertical-align: middle;
+    line-height: 44px;
 }
 
 html .elementor-widget-button a.elementor-button,
@@ -293,6 +306,10 @@ html .site-header-cart .cart-contents::after {
     margin-left: 10vw;
 }
 
+.site-footer .col-full {
+    transform: translate(-5vw, 0);
+}
+
 #page .site-footer a:not(.button) {
     display: none;
 }
@@ -377,7 +394,7 @@ html .storefront-breadcrumb {
 */
 
 html #page h2.woocommerce-loop-product__title {
-    background-color: #42773f;
+    background-color: var(--primary-color);
     padding: 10px 15px;
     color: #FFF;
     width: 100%;
@@ -442,6 +459,7 @@ html ul.products li span.price del .amount {
 form.cart {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 html ul.products li.product .button,
@@ -449,6 +467,7 @@ html ul.products .wc-block-grid__product .button,
 html .wc-block-grid__products li.product .button,
 html .wc-block-grid__products .wc-block-grid__product .button {
     margin: 0;
+    vertical-align: middle;
 }
 
 
@@ -494,4 +513,49 @@ html .wc-block-grid__products .wc-block-grid__product .button {
 
 .custom-product-menu ul li.active a {
     color: #f4564a;
+}
+
+html .woocommerce span.onsale,
+html span.onsale {
+    display: none;
+}
+
+html ul.products li p.confirm_add {
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    background-color: var(--primary-color);
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.woocommerce-message .button {
+    font-size: 15px;
+}
+
+html .woocommerce-message {
+    background-color: var(--primary-color);
+}
+
+.woocommerce-cart table.cart td.actions input,
+html .woocommerce-cart .button {
+    vertical-align: middle;
+}
+
+.woocommerce-cart div.woocommerce,
+.woocommerce-checkout div.woocommerce {
+    padding-top: 50px;
+}
+
+html .wc-proceed-to-checkout .button.checkout-button {
+    font-size: 34px;
+}
+
+table.cart th {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+html .woocommerce-info {
+    background-color: #f4564a;
 }
